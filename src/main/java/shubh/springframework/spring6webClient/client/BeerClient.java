@@ -1,4 +1,4 @@
-package shubh.springframework.spring6webClient;
+package shubh.springframework.spring6webClient.client;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import reactor.core.publisher.Flux;

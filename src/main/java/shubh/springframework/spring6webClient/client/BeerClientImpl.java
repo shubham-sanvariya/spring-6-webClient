@@ -1,9 +1,10 @@
-package shubh.springframework.spring6webClient;
+package shubh.springframework.spring6webClient.client;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Flux;
+import shubh.springframework.spring6webClient.client.BeerClient;
 
 import java.util.Map;
 
