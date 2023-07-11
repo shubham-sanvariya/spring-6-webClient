@@ -23,6 +23,17 @@ public class BeerClientImpl implements BeerClient {
     }
 
     @Override
+    public Mono<BeerDto> updateBeer(BeerDto beerDto) {
+        return webClient.put()
+                .uri(uriBuilder -> uriBuilder.path(BEER_PATH_ID)
+                        .build(beerDto.getId()))
+                .body(Mono.just(beerDto), BeerDto.class)
+                .retrieve()
+                .toBodilessEntity()
+                .flatMap(voidResponseEntity -> getBeerById(beerDto.getId()));
+    }
+
+    @Override
     public Mono<BeerDto> createBeer(BeerDto beerDto) {
         return webClient.post().uri(BEER_PATH)
                 .body(Mono.just(beerDto), BeerDto.class)
